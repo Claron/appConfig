@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- NOTE: iOS and Android app have different names. We use the iOS name here and will automatically create another app with the Android name. -->
+<widget id="com.fluidesign.mobileroadie.2029" version="6.8.2" android-versionCode="60804" xmlns="http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android" >
+	<name>Cinepad</name>
+	<description>Le Cinepad mag by Angetkoutchi.</description>
+	<author email="angetkoutchi@angetkoutchi.com" href="http://www.angetkoutchi.com">Angetkoutchi</author>
+	<access origin="*" />
+
+	<preference name="phonegap-version" value="3.3.0" />
+	
+	<preference name="orientation" value="portrait" />
+	<preference name="fullscreen" value="false" />
+	<preference name="webviewbounce" value="false" />
+
+	<icon src="icon.png" />
+	<icon src="img/icons/iOS/icon_57x57.png" gap:platform="ios" width="57" height="57" />
+	<icon src="img/icons/iOS/icon_72x72.png" gap:platform="ios" width="72" height="72" />
+	<icon src="img/icons/iOS/icone_76x76.png" gap:platform="ios" width="76" height="76" />
+	<icon src="img/icons/iOS/icon_96x96.png" gap:platform="ios" width="96" height="96" />
+	<icon src="img/icons/iOS/icon_114x114.png" gap:platform="ios" width="114" height="114" />
+	<icon src="img/icons/iOS/icon_120x120.png" gap:platform="ios" width="120" height="120" />
+	<icon src="img/icons/iOS/icon_144x144.png" gap:platform="ios" width="144" height="144" />
+	<icon src="img/icons/iOS/icon_152x152.png" gap:platform="ios" width="152" height="152" />
+
+	<icon src="img/icons/Android/icon_36x36.png" gap:platform="android" gap:density="ldpi" />
+	<icon src="img/icons/Android/icon_48x48.png" gap:platform="android" gap:density="mdpi" />
+	<icon src="img/icons/Android/icon_72x72.png" gap:platform="android" gap:density="hdpi" />
+	<icon src="img/icons/Android/icon_96x96.png" gap:platform="android" gap:density="xhdpi" />
+	<icon src="img/icons/Android/icon_144x144.png" gap:platform="android" gap:density="xxhdpi" />
+	<icon src="img/icons/Android/icon_192x192.png" gap:platform="android" gap:density="xxxhdpi" />
+
+	<gap:splash src="splash.png" />
+	<gap:splash src="img/splash/ios/splash.png"             gap:platform="ios" width="320" height="480" />
+	<gap:splash src="img/splash/ios/splash_640x960.png"     gap:platform="ios" width="640" height="960" />
+	<gap:splash src="img/splash/ios/splash_640x1136.png"    gap:platform="ios" width="640" height="1136" />
+	<gap:splash src="img/splash/ios/splash_768x1004.png"    gap:platform="ios" width="768" height="1004" />
+	<gap:splash src="img/splash/ios/splash_1024x768.png"    gap:platform="ios" width="1024" height="748"  />
+	<gap:splash src="img/splash/ios/splash_1536x2008.png"   gap:platform="ios" width="1536" height="2008" />
+	<gap:splash src="img/splash/ios/splash_2048x1496.png"   gap:platform="ios" width="2048" height="1496" />
+
+	<gap:splash src="img/splash/android/splash_540x960.png" gap:platform="android" gap:density="hdpi" />
+	<gap:splash src="img/splash/android/splash_540x960.png" gap:platform="android" gap:density="xhdpi" />
+
+	<preference name="prerendered-icon" value="true" />
+
+	<feature name="http://api.phonegap.com/1.0/camera"/>
+	<feature name="http://api.phonegap.com/1.0/geolocation"/>
+	<feature name="http://api.phonegap.com/1.0/media"/>
+	<feature name="http://api.phonegap.com/1.0/notification"/>
+
+	<!-- launchmyapp plugin for opening other app -->
+	<gap:plugin name="nl.x-services.plugins.launchmyapp" >
+		<param name="URL_SCHEME" value="cinepadbyak" />
+	</gap:plugin>
+
+    <gap:plugin name="com.sharinglabs.cordova.plugin.datepicker"/>
+	<!-- Used to check if another app is already installed or not. -->
+	<gap:plugin name="com.ohh2ahh.plugins.appavailability" />
+	<!-- Used for push notifications. -->
+	<gap:plugin name="com.sharinglabs.cordova.plugin.pushplugin" version="2.2.1" />
+	<!-- Used to open external pages and have a way to go back to our app. -->
+	<gap:plugin name="com.adobe.plugins.gaplugin" />
+	<!-- Used to connect to facebook. -->
+	<gap:plugin name="com.phonegap.plugins.facebookconnect" >
+		<param name="APP_ID" value="523493927725811" />
+		<param name="APP_NAME" value="cinepad_app" />
+	</gap:plugin>
+	<!-- inapp browser -->
+	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.3.3"/>
+	<gap:plugin name="org.apache.cordova.network-information" />
+	<gap:plugin name="org.apache.cordova.device" version="0.2.8"/>
+	<gap:plugin name="org.apache.cordova.dialogs" />
+	<!-- Used to change the orientation of the screen: works only on Android -->
+	<gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" />
+
+	<feature name="http://api.phonegap.com/1.0/geolocation"/>
+	<gap:plugin name="org.apache.cordova.file" version="1.0.1" />
+	<gap:plugin name="org.apache.cordova.file-transfer" version="0.4.2" />
+    <gap:plugin name="com.phonegap.plugin.statusbar" />
+
+    <!--status bar-->
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+
+	<feature name="Device">
+		<param name="ios-package" value="CDVDevice" />
+		<param name="android-package" value="org.apache.cordova.device.Device" />
+	</feature>
+	<feature name="File">
+		<param name="ios-package" value="CDVFile" />
+		<param name="android-package" value="org.apache.cordova.file.FileUtils" />
+	</feature>
+	<feature name="FileTransfer">
+		<param name="ios-package" value="CDVFileTransfer" />
+		<param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+	</feature>
+
+	<!-- .. but override iPad orientation to allow landscape as well (set overwrite="true" to allow only landscape) -->
+	<gap:config-file platform="ios" parent="UISupportedInterfaceOrientations~ipad" overwrite="true">
+		<array>
+			<string>UIInterfaceOrientationLandscapeLeft</string>
+			<string>UIInterfaceOrientationLandscapeRight</string>
+		</array>
+	</gap:config-file>
+	
+	<gap:config-file platform="android" parent="/manifest">
+		<supports-screens 
+		android:smallScreens="true" 
+		android:normalScreens="true" 
+		android:largeScreens="true" 
+		android:xlargeScreens="false"
+		/>
+		<compatible-screens>
+			<!-- all small size screens -->
+			<screen android:screenSize="small" android:screenDensity="ldpi" />
+			<screen android:screenSize="small" android:screenDensity="mdpi" />
+			<screen android:screenSize="small" android:screenDensity="hdpi" />
+			<screen android:screenSize="small" android:screenDensity="xhdpi" />
+			<!-- <screen android:screenSize="small" android:screenDensity="xxhdpi" /> -->
+			<screen android:screenSize="small" android:screenDensity="480" />
+			<!-- all normal size screens -->
+			<screen android:screenSize="normal" android:screenDensity="ldpi" />
+			<screen android:screenSize="normal" android:screenDensity="mdpi" />
+			<screen android:screenSize="normal" android:screenDensity="hdpi" />
+			<screen android:screenSize="normal" android:screenDensity="xhdpi" />
+			<!-- <screen android:screenSize="normal" android:screenDensity="xxhdpi" /> -->
+			<screen android:screenSize="normal" android:screenDensity="480" />
+			<!-- all large size screens -->
+			<screen android:screenSize="large" android:screenDensity="ldpi" />
+			<screen android:screenSize="large" android:screenDensity="mdpi" />
+			<screen android:screenSize="large" android:screenDensity="hdpi" />
+			<screen android:screenSize="large" android:screenDensity="xhdpi" />
+			<!-- <screen android:screenSize="large" android:screenDensity="xxhdpi" /> -->
+			<screen android:screenSize="large" android:screenDensity="480" />
+		</compatible-screens>
+	</gap:config-file>
+	<!-- Only build for iOS and Android. -->
+	<!-- NOTE: as iOS and Android app have different names, only ask for iOS here. We will automatically replace it with "android" for the Android app. -->
+	<gap:platform name="ios" />
+
+	<!-- ANDROID ONLY -->
+	<!--<preference name="android-windowSoftInputMode" value="stateUnspecified|adjustPan" />-->	<!-- Changes the way the virtual keyboard interacts with the view -->
+	<preference name="android-installLocation" value="auto" /> <!-- Allows installing on the SD card -->
+	<preference name="android-minSdkVersion" value="11" />
+	<preference name="android-targetSdkVersion" value="19" />
+
+</widget>
